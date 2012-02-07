@@ -1,0 +1,9 @@
+<h2>Efetuar Login</h2>
+<%= form_for(:user, :as => @user, :url => session_path(User)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email %></div>
+
+  <div><%= f.label :password %><br />
+  <%= f.password_field :password %></div>
+  <div><%= f.submit "Login" %></div>
+<% end %>

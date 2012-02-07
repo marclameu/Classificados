@@ -1,0 +1,45 @@
+<div class="produtos-em-destaque">
+  <strong>Resultado da busca:</strong>
+</div>
+<div class="paginacao">
+    <div class="flickr_pagination">
+        <%= will_paginate @products , {:previous_label => "<- Anterior", :next_label => "Próximo ->"}%>
+    </div>
+ </div>
+<div class="general-search">
+  <ul class ="items-grid">
+    <% if(@products.present?) %>
+      <% @count = 1 %>
+      <% @products.each do |p| %>
+       <li>
+           <% @divclass = (@count == 1) ? "item-first" : "item"  %>
+             <div class= <%=  h @divclass %> >
+               <span class="product-image">
+                <%= link_to (image_tag p.image.url(:thumb)), p %>
+              </span>
+                <span class="product-name-box">
+                  <strong> Nome: </strong> <%=  p.name %>
+                </span>                
+                <span class="product-description">
+                  <strong>Descrição: </strong><%=  p.description %>
+                </span>
+               <span class="price-box">
+                 <strong>Preço: </strong><%= number_to_currency(p.price, :unit=>"R$ ") %>
+              </span>
+            </div>
+        </li>
+        <% @count =  (@count == 4)? 1 : @count + 1   %>
+        <% if @count == 1 %>
+          <div class="separa_blocos"></div>
+        <%end%>
+
+      <% end %>
+    <% end %>
+  </ul>
+</div>
+<br/>
+<div class="paginacao">
+    <div class="flickr_pagination">
+        <%= will_paginate @products , {:previous_label => "<- Anterior", :next_label => "Próximo ->"}%>
+    </div>
+ </div>

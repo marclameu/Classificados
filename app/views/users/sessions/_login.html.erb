@@ -1,0 +1,9 @@
+<div id="user_login_box">
+  <%= form_for("user", :url => user_session_path, :html => {:id => "sign_in"}, :remote => true, :format => :json) do |f| %>
+  <div><%= f.label :email, :class=>"email-label"%><br />
+  <%= f.email_field :email, :class=>"email-field",:size => 20 %></div>
+  <div><%= f.label :password, :class=>"email-label" %><br />
+  <%= f.password_field :password, :class=>"email-field", :size => 20 %></div>
+  <div><%= f.submit "Login" %></div>
+  <% end %>
+</div>

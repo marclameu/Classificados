@@ -1,0 +1,594 @@
+*{
+     margin:0;
+     padding:0;
+
+}
+
+
+body {
+	 font:15px Arial, Verdana, tahoma;
+	 min-width:1420px;
+}
+
+/************** IN�CIO TOPO **************************/
+
+#topo{
+     background:url(fundo-topo.jpg) repeat-x;
+     min-width: 1419px;
+     height:300px; 
+     float:left;		 
+}
+
+#logo{
+     background:url(logo.jpg) no-repeat;  
+     width: 464px;
+     height: 227px;
+     float: left;		 
+}
+#eslogan{
+     background:url(eslogan.jpg);
+     background-repeat:no-repeat;
+     width:328px;
+     height:114px;
+     float: left;
+     margin: 15px 0 0 200px;
+}
+
+#login-div{
+    
+}
+.notice{
+    color: #FFFFFF;
+}
+.email, .password{
+    border-style: none;
+    background-color: #FFFFFF;
+    height: 20px;
+    margin: 5px 0 0 0;
+    padding: 0 0 0 0;
+}
+
+#box-busca{    
+  height: 100px;
+  width:660px;
+  padding: 0 0 0 50px;  
+  float:left;
+}
+#busca-texto-e-label{
+  float:left;   
+  margin: -20px 0 0 0;
+}
+
+#faca-sua-busca{     
+	 color:white;
+	 font-weight:bold;
+	 font-size:18px;
+	 font-family:tahoma;	
+}
+
+#buscar-txt{
+     background:url(busca2.jpg);
+     background-repeat:no-repeat;
+     width:542px;
+     height:57px;
+     margin: 10px 0 0 0;
+}
+
+#buscar-txt fieldset{
+     height:44px;
+     border:0;
+     float:left;	     	 
+}
+
+#buscar-txt input{
+     background:white;
+     margin:4px 0 0 60px;
+     border:0;
+     color:#484848;
+     font:38px Arial, Verdana, Tahoma;
+     font-weight:bold;
+     width: 450px;
+}
+
+#botao-buscar{
+	 float:left;
+	 margin: 10px 0 0 10px;
+}
+
+#menu-topo{     
+     background:url(barra-menu.jpg);
+	 background-repeat:repeat-x;
+     min-width: 1400px;
+     height: 228px;
+	 padding: 7px 0 0 120px;
+	 float: right;
+}
+
+#menu-topo ul{
+     float:left;	 
+}
+
+#menu-topo ul li{
+     display:inline;
+	 margin:0 18px 0 0;
+}
+
+#menu-topo ul li a{     
+     color:black;
+	 font-weight:bold;
+	 font-size:20px;
+	 font-family:tahoma;
+	 text-decoration:none;
+	 padding:7px 6px 5px 6px;
+}
+
+#menu-topo ul li a:hover{
+     background:url(barra-menu2.jpg) repeat-x bottom;
+     color:white;
+	 padding:5px 6px 7px 6px;
+}
+
+
+/********** FIM TOPO */
+
+
+/********* INÍCIO CORPO ***********/
+
+#corpo-do-site{
+     width:1328px;
+     background:white;
+     clear:both;
+     float:left;     
+}
+
+#corpo-cadastro{
+     background:white;
+     width:1090px;
+	 height:330px;
+     margin:0 0 0 124px;
+	 padding:10px 0 0 0;
+}
+
+
+#propaganda{
+     background:url(propaganda.jpg);
+     width:1300px;
+	 height:135px;	 
+	 padding:0 0 2px 0;	 
+	 float:left;
+}
+
+.produtos-em-destaque{
+    clear: both;
+    float: left;
+    font:20px Arial, Verdana, tahoma;
+    color: grey;
+    font-weight: bold;
+    margin: 20px 0 0 5px;
+    height: 60px;
+}
+
+.slider-text p{
+    font: 20px Arial;
+    margin: 10px 0 0 -100px;
+}
+
+#filtro_aux{
+    
+}
+
+.items-grid li{
+   display: inline;   
+}
+
+.item-first{
+    font:15px Arial, Verdana, tahoma;    
+/*    border-right: solid 1px;     */
+    width: 210px;
+    min-height: 150px;
+    padding: 0;
+    float: left;
+    margin:0 0 0 0;
+    clear:both;
+}
+
+.item{
+    font:15px Arial, Verdana, tahoma;    
+    width: 210px;
+    min-height: 150px;
+    padding: 0 0 0 60px;
+    float: left;
+    margin: 0 0 0 60px;
+    text-align: left;
+}
+
+.product-image{
+    float: left;
+    min-height: 110px;
+}
+.product-name-box{    
+    clear: both;
+    float: left;
+}
+.product-description{    
+    clear: both;
+    float: left;
+}
+.price-box{
+    clear: both;
+    float: left;
+}
+.general-search{
+    float: left;
+    margin: 0 0 0 100px;    
+    min-height: 50px;
+    width: 100%;    
+}
+
+.slider{
+   float: left;
+   margin: 0 0 0 400px;
+   font: 25px Arial;
+}
+
+#separator{
+    height: 1px;
+    width: 900px;
+}
+.separa_blocos{
+    width:100%;
+    min-height: 30px;
+    float:left;
+}
+
+.paginacao{   
+   clear:both;
+   padding: 0 0 20px 0;
+}
+
+#anuncios{
+     background:url(anuncios3.jpg);
+     width:1188px;
+     height:47px;
+     margin:20px 0 4px 0;
+     color:red;
+	 
+	 
+}
+
+.products-grid{
+	border-bottom:1px solid #d9ddd3;
+	background:url(/skin/frontend/default/default/images/bkg_grid.gif) 0 0 repeat;
+	position:relative;
+	display:block;
+	width:135px;
+	height:135px;
+	margin:0 0 10px;
+	width:100%;
+	border:1px solid #e5dcc3;
+}
+li.item{
+	padding:7px 9px;
+	float: left;
+	width: 138px;
+	padding: 12px 10px 80px;
+	border-bottom:1px solid #d9ddd3;
+	border-right:1px solid #d9ddd3;
+	padding:12px 10px;
+	margin: 12px 0;
+}
+
+li.item.last{ 
+	border-bottom:0;
+}
+
+
+.item{
+	margin:0 0 10px;}
+
+#anuncios h1{
+     margin:0 0 0 10px;
+     font-size:24px;
+     font-family:myriad pro;
+
+}
+
+.link-voltar{
+    margin: 0 0 0 20px;
+}
+
+#veiculos{
+     background:url(vendas2.jpg);
+	 float:left; 
+     width:390px;
+	 height:400px;
+	 margin:0 0 0 0;
+
+}
+
+#veiculos h1{
+     margin:-3px 0 0 6px;
+	 font-size:24px;
+	 font-family:myriad pro;
+
+}
+
+#conteudo-veiculos{
+     background:url(vendas2.jpg);
+	 float:left; 
+     width:1080px;
+	 height:26px;
+	 margin:0 0 0 8px;
+
+}
+
+#conteudo-veiculos h1{
+     margin:-3px 0 0 500px;
+	 font-size:24px;
+	  font-family:myriad pro;
+	  color:#3366FF;
+
+
+}
+
+#imoveis{
+     background:url(vendas2.jpg);
+	 float:right;
+     width:390px;
+	 height:400px;
+	 margin:0px 540px 0 0;
+	
+}
+
+#imoveis h1{
+     margin:-3px 0 0 6px;
+	 font-size:24px;
+	 font-family:myriad pro;
+
+}
+
+#motos{
+     background:url(vendas2.jpg);
+	 float:left; 
+     width:390px;
+	 height:400px;
+	 margin:20px 0 0 0px;
+
+}
+
+#motos h1{
+     margin:-3px 0 0 6px;
+	 font-size:24px;
+	 font-family:myriad pro;
+}
+
+#produtos{
+     background:url(vendas2.jpg);
+	 float:right;
+     width:390px;
+	 height:400px;
+	 margin:20px 540px 0 0;
+
+}
+
+#produtos h1{
+     margin:-3px 0 0 6px;
+	 font-size:24px;
+	 font-family:myriad pro;
+
+}
+
+#lotes{
+     background:url(vendas2.jpg);
+	 float:right;
+     width:390px;
+	 height:400px;
+	 margin:-820px 140px 0 0;
+     
+}
+
+#lotes h1{
+     margin:-3px 0 0 6px;
+	 font-size:24px;
+	 font-family:myriad pro;
+
+}
+
+#sitios{
+     background:url(vendas2.jpg);
+	 float:right;
+     width:390px;
+	 height:400px;
+	 margin:-400px 140px 0 0;
+     
+}
+
+#sitios h1{
+     margin:-3px 0 0 6px;
+	 font-size:24px;
+	 font-family:myriad pro;
+
+}
+
+#conteudo-cadastro{
+     margin:-12px 0 0 10px;
+	 font-size:30px;
+	 font-weight:bold;
+	 color:blue;
+	 border-bottom:4px solid blue;
+
+
+}
+
+#centro fieldset{
+     border:0;
+	 margin:20px 0 0 30px;
+	 padding:0;
+	 font-weight:bold;
+	 color:black;
+
+}
+
+#centro input{
+     background:dodgerblue;
+	 margin:0 0 -12px 0;
+	 padding:6px;
+	 color:#FFFFFF;
+	 font:18px Arial, Verdana, Tahoma;
+	 font-weight:bold;
+	 border:0;
+
+}
+
+/********* FIM CORPO ***********/
+
+
+#rodape-cadastro{
+     background:gainsboro;
+     height:190px;
+	 margin:40px 0 0 0;
+	 padding:10px 0 0 0;
+
+}
+
+#rodape-cadastro h1{
+     margin:170px 0 0 348px;
+	 font-size:12px;
+	
+
+}
+
+
+
+
+
+
+
+
+
+#rodape{
+     width:100%;
+     background:gainsboro;
+	 margin:850px 0 0 0;
+	 text-align:center;
+	 padding:500px 0 0 0;
+	 clear:both;
+
+}
+
+#rodape h1{
+     font-size:12px;
+	 margin:0 8px 0 0;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

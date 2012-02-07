@@ -1,0 +1,24 @@
+<div class= "item">
+ <span class="product-image">
+  <%= image_tag @product.image.url(:medium) %>
+</span>
+  <span class="product-name-box">
+    <strong> Nome: </strong> <%=  @product.name %>
+  </span>
+  <span class="product-description">
+    <strong>Descrição: </strong><%=  @product.description %>
+  </span>
+ <span class="price-box">
+   <strong>Preço: </strong><%= number_to_currency(@product.price, :unit=>"R$ ") %>
+</span>
+</div>
+<div class="separa_blocos">
+  <span class="link-voltar"> <a HREF="javascript:history.back()">Voltar</a> </span>
+  <% if(user_signed_in?) %>
+      <% if(@product.user == current_user) %>
+        <span class="link-voltar">
+          <%= link_to 'Editar', edit_product_path(@product) %>
+        </span>
+      <% end %>
+  <% end %>
+</div>

@@ -1,0 +1,116 @@
+<!DOCTYPE html PUBLIC "=//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">  
+
+  <title><%= $link_atual%> </title>
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <title>Classificados</title>
+  <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "style_login" %>
+  <%= stylesheet_link_tag    "pagination" %>
+  <%= stylesheet_link_tag    "estilo" %>
+  <%= stylesheet_link_tag "jquery-ui-1.8.16.custom" %>
+  <%= javascript_include_tag "application" %>
+<%= csrf_meta_tags %>
+<%= javascript_include_tag "jquery-ui-1.8.16.custom.min" %>
+  <%= javascript_include_tag "pagination" %>
+  
+
+  
+
+</head>
+<style type="text/css">
+A:link {text-decoration:none}
+A:visited {text-decoration:none}
+A:active {text-decoration:none}
+A:hover {text-decoration:none}
+a img {
+border-width:0;
+}
+</style>
+
+<body>
+            
+<div id="topo">					
+  <div id="logo">						 
+  </div>						 
+  <div id="eslogan">								
+  </div>						    					  							       
+	<!--<a href="anuncie-gratis">Anuncie Grátis</a>		-->
+      <div id="box-busca">
+          <%= form_tag (products_search_path), :remote=>true  do  %>
+          <div id="busca-texto-e-label">	  
+			  <span id="faca-sua-busca">
+				Faça Sua Busca
+			  </span>
+			  <div id="buscar-txt"> 
+				<fieldset>				  
+                                  <%= text_field_tag :search, params[:search], :id => "textfield2","size" => 20, "maxlenght" => 60 %>
+				</fieldset>
+			  </div>		
+		  </div>
+			  <div id="botao-buscar">				
+                                <%= image_submit_tag('botao-buscar.jpg') %>
+			  </div>
+          <% end %>
+	  </div>
+        <div id="login-div">
+		  <%= render :partial => "users/sessions/manager" %>      
+		  <br/>
+		  <%= link_to('Efetuar Login', new_user_session_path)  %>     
+        </div>
+
+  <div id="menu-topo">
+    <ul>
+		<li> <%= link_to 'Home', root_path(:search_filter =>"home"), :id=>'home-li' %> </li>
+                <li> <%= link_to 'Imóveis', root_path(:search_filter =>"imoveis"), :id=>'imoveis-li' %> </li>
+		<li> <%= link_to 'Eletrônicos', root_path(:search_filter =>"eletronicos"), :id=>'eletronicos-li' %> </li>
+		<li> <%= link_to 'Veículos', root_path(:search_filter =>"veiculos"), :id=>'veiculos-li' %> </li>
+		<li> <%= link_to 'Motos', root_path(:search_filter =>"motos"), :id=>'motos-li' %> </li>
+		<li> <%= link_to 'Diversos', root_path(:search_filter =>"diversos"), :id=>'diversos-li' %> </li>		
+		<li> <%= link_to 'Cadastre-se', new_user_registration_path, :id=>'cadastre-se-li' %> </li>
+	</ul>
+
+  </div>
+</div>
+
+<div id="corpo-do-site">  
+
+ <%= yield %>
+
+</div>
+
+<div id="rodape">
+
+<h1>
+Copyright © 2012 classificadoslafaiete.com.br todos os direitos reservados
+</h1>
+
+</div>				
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
