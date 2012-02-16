@@ -1,7 +1,8 @@
 <p class="notice"><%= notice %></p>
 <p class="alert"><%= alert %></p>
+<div class="login-title">
 <h2>Efetuar Login</h2>
-
+</div>
 <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <div><%= f.label :email %><br />
   <%= f.email_field :email %></div>
@@ -12,4 +13,3 @@
   <div><%= f.submit "Sign in" %></div>
 <% end %>
 
-<%= render :partial => "devise/shared/links" %>
