@@ -10,10 +10,10 @@ class ProductsController < ApplicationController
   def index
     params[:search_filter] = (!params[:search_filter].present? or params[:search_filter] == 'home') ? '' :params[:search_filter]
     unless params[:search_filter].empty?
-      @products = Product.filter_by_category(params[:search_filter].capitalize).paginate(:page => params[:page])
+      @products = Product.filter_by_category(params[:search_filter]).paginate(:page => params[:page], :per_page => 8)
       flash[:notice] = "Secao de #{params[:search_filter].capitalize}:"
     else
-      @products = Product.paginate(:page => params[:page])
+      @products = Product.paginate(:page => params[:page], :per_page => 8)
       flash[:notice] = "Produtos em destaque:"
     end
     
