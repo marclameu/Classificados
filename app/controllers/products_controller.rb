@@ -8,28 +8,20 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    #@products = Product.paginate(:page => params[:page])   
-
-    #params[:search_filter] = (params[:search_filter] == 'home') ? '' :params[:search_filter]
-
-
-    if (params[:search_filter])
-       #$link_atual = (params[:search_filter] == 'home') ? '' : params[:search_filter]
-       $link_atual = params[:search_filter]
+    params[:search_filter] = (!params[:search_filter].present? or params[:search_filter] == 'home') ? '' :params[:search_filter]
+    unless params[:search_filter].empty?
+      @products = Product.filter_by_category(params[:search_filter].capitalize).paginate(:page => params[:page])
+      flash[:notice] = "Secao de #{params[:search_filter].capitalize}:"
+    else
+      @products = Product.paginate(:page => params[:page])
+      flash[:notice] = "Produtos em destaque:"
     end
-
-    params[:search_filter] = (params[:search_filter] == 'home') ? '' : params[:search_filter]
     
-    unless params[:low] && params[:high]
-      @products =  Product.joins(:category).where("categories.name like ? ", 
-                                                  "%#{params[:search_filter]}%").paginate(:per_page => 8, :page => params[:page])
-      #@products = Product.all(:conditions => [' name like ? ', "%#{$link_atual}%"])
-    else      
-      @products = Product.filter(params[:low], params[:high]).paginate(:per_page => 8, :page => params[:page])
-      #Product.paginate(:page => params[:page])
+    
+    if @products.empty?
+      flash[:notice] = "Nenhum produto cadastrado com a categoria informada."
+      # redirect_to '/404.html', :status => 404
     end
-
-    @price_range = Product.high_low_prices
   end
 
   def search

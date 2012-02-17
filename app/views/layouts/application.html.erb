@@ -48,20 +48,25 @@ border-width:0;
 			  </span>
 			  <div id="buscar-txt"> 
 				<fieldset>				  
-                                  <%= text_field_tag :search, params[:search], :id => "textfield2","size" => 20, "maxlenght" => 60 %>
+                    <%= text_field_tag :search, params[:search], :id => "textfield2","size" => 20, "maxlenght" => 60 %>
 				</fieldset>
 			  </div>		
 		  </div>
 			  <div id="botao-buscar">				
-                                <%= image_submit_tag('botao-buscar.jpg') %>
+                 <%= image_submit_tag('botao-buscar.jpg') %>
 			  </div>
           <% end %>
 	  </div>
-        <div id="login-div">
-		  <%= render :partial => "users/sessions/manager" %>      
-		  <br/>
-		  <%= link_to('Efetuar Login', new_user_session_path)  %>     
-        </div>
+        
+	      <%if !user_signed_in?%>
+         	<div class="link-acesso">
+     	      <%= link_to('Acesso', new_user_session_path)  %>
+  			</div>
+          <%else%>
+ 			<div class="link-lgout">
+              <%= render :partial => 'users/sessions/logout'%>
+            </div>
+		  <%end%>
 
   <div id="menu-topo">
     <ul>

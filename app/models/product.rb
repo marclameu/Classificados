@@ -6,24 +6,27 @@ class Product < ActiveRecord::Base
   has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "100x100>" }
 
   default_scope order('price ASC')
+  
+  scope :filter_by_category, lambda {|category_name| Product.joins(:category).where("categories.name = ?",[category_name])
+   }
 
   #scope :filter, lambda { |low, high| where(:price => low..high) }
-  def self.filter(low, high)
-    if ($link_atual == 'home')
-      filtro = ''
-    else
-      filtro = $link_atual
-    end
+  #def self.filter(low, high)
+  #  if ($link_atual == 'home')
+  #    filtro = ''
+  #  else
+  #    filtro = $link_atual
+  #  end
     
-    @products =  Product.joins(:category).where(" products.price >= ? and products.price <= ? and 
-                                                    categories.name like ? ", low, high, "%#{filtro}%")
+   # @products =  Product.joins(:category).where(" products.price >= ? and products.price <= ? and 
+  #                                                  categories.name like ? ", low, high, "%#{filtro}%")
 
     #if (search)
      #Product.all(:conditions => [' price >= ? and price <= ? and name like ?', low, high, "%#{$link_atual}%"])
     #else
     # Product.all(:conditions => [' price >= ? and price <= ?', low, high])
    # end
-  end
+ # end
 
   def self.high_low_prices
     [Product.minimum(:price), Product.maximum(:price)]

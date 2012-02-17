@@ -25,6 +25,8 @@ pt-BR:
     passwords:
       send_instructions: 'Dentro de minutos, você receberá um email com as instruções de reinicialização da sua senha.'
       updated: 'A sua senha foi alterada com sucesso. Você está autenticado.'
+      updated_not_active: 'Your password was changed successfully.'
+      send_paranoid_instructions: "If your e-mail exists on our database, you will receive a password recovery link on your e-mail"
     confirmations:
       send_instructions: 'Dentro de minutos, você receberá um email com as instruções de confirmação da sua conta.'
       confirmed: 'A sua conta foi confirmada com sucesso. Você está autenticado.'

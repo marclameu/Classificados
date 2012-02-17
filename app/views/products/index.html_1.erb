@@ -1,39 +1,56 @@
-<div id="propaganda">Propaganda</div>
- <br/>
- <ul class="products-grid">
-    <li class="item first">um</li>
-	<li class="item">dois</li>
-	<li class="item last">três</li>
- </ul>
-
-<h1>Listing products</h1>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-    <th>Price</th>
-    <th>Category</th>
-    <th>Mark</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
-
-<% @products.each do |product| %>
-  <tr>
-    <td><%= product.name %></td>
-    <td><%= product.description %></td>
-    <td><%= product.price %></td>
-    <td><%= product.category %></td>
-    <td><%= product.mark %></td>
-    <td><%= link_to 'Show', product %></td>
-    <td><%= link_to 'Edit', edit_product_path(product) %></td>
-    <td><%= link_to 'Destroy', product, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Product', new_product_path %>
+<html>
+  <head>
+    <script type="text/javascript">
+      $(function() {
+        $("#x_slider").slider( {
+          range: true,
+          step: 10,
+          max: <%= @price_range.last %>,
+          min: <%= @price_range.first %>,
+          values: [<%= @price_range.first %>, <%= @price_range.last%> ],
+          stop: function(event, ui) {            
+            var prices = $('#x_slider').slider('option', 'values');
+            //$('#x_low_selected').html(prices[0]);
+            //$('#x_high_selected').html(prices[1]);
+            $('#x_low_selected').html(prices[0]);
+            $('#x_high_selected').html(prices[1]);
+            $.ajax({
+              type: "GET",
+              data: ({ low: prices[0], high: prices[1]}),
+              url: 'http://0.0.0.0:3000/products.js',
+              dataType: 'script'
+            });
+          }
+        });
+      });
+    </script>
+  </head>
+  <body>
+<div id="propaganda nao">  
+</div>
+<div class="slider">
+  <div id="x_slider" style="font-size:62.5%; width:550px;">
+  </div>
+<% @pagina_atual = ($link_atual == '') ? 'home' : $link_atual %>
+  <div>
+    <div class="slider-text">      
+      <% if @pagina_atual == 'home' %>
+        <p>Exibindo produtos com preço entre R$ <span id="x_low_selected"><%= number_to_currency(@price_range.first, :unit=>"") %></span> e R$ <span id="x_high_selected"> <%= number_to_currency(@price_range.last, :unit=>"") %></span></p>
+      <% else %>        
+       <p>Exibindo <%= h @pagina_atual %> com preço entre R$ <span id="x_low_selected"><%= number_to_currency(@price_range.first, :unit=>"") %></span> e R$ <span id="x_high_selected"> <%= number_to_currency(@price_range.last, :unit=>"") %></span></p>
+      <% end %>
+    </div>
+  </div>
+</div>
+<div class="produtos-em-destaque">
+  <% if (@pagina_atual == 'home') || (@pagina_atual == nil) %>
+    <strong>Produtos em destaque: </strong>
+  <% else %>
+    <strong> <%= h "Seção de " + @pagina_atual.capitalize %>  </strong>
+  <% end %>
+</div>    
+    <ul id="x_product_list">      
+      <%= render 'product', :products => @products %>
+    </ul>
+ </body>  
+</html>

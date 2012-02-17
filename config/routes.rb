@@ -3,7 +3,9 @@ Classificados::Application.routes.draw do
   devise_for :users, :controllers => {:sessions => 'sessions'}
 
   match 'products/search' => 'products#search'
-
+  
+#  get "products/filter/:id" => "products#index", :as => :product
+  
   resources :products
 
   resources :marks
