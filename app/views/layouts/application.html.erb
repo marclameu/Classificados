@@ -59,9 +59,7 @@ border-width:0;
 	  </div>
         
 	      <%if !user_signed_in?%>
-         	<div class="link-acesso">
-     	      <%= link_to('Acesso', new_user_session_path)  %>
-  			</div>
+     	      <%= link_to('', new_user_session_path, :class=>"link-acesso")  %> 
           <%else%>
  			<div class="link-lgout">
               <%= render :partial => 'users/sessions/logout'%>

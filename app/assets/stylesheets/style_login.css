@@ -2,10 +2,15 @@
 
 .login-title {margin: 0 0 0 460px}
 
-.link-acesso{ background-color: #FFFFFF;
-			  float: left;
-			  margin: -120px 150px 0 0;
-			  width:50px;			  
+a.link-acesso{ background-image: url("acesso.gif");				  
+			  margin: -220px 350px 0 0;
+			  float:right;
+			  width:119px;	
+			  height:40px;		  
+			}
+a.link-acesso:hover{ 
+		  	  /*background-position: 0 41px;
+		      height: 41px;*/
 			}
 .link-acesso a:hover{
 	background-color: #8B8989;

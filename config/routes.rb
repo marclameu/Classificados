@@ -1,5 +1,9 @@
 Classificados::Application.routes.draw do
 
+  get "users/admin"
+
+  get "user/admin"
+
   devise_for :users, :controllers => {:sessions => 'sessions'}
 
   match 'products/search' => 'products#search'
