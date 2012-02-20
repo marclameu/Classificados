@@ -1,9 +1,6 @@
 class ProductsController < ApplicationController
   before_filter :carrega_dados
-
-  def lotes
-    
-  end
+  before_filter :authenticate_user!, :except => [:index, :search, :show]
 
   # GET /products
   # GET /products.json
@@ -60,6 +57,7 @@ class ProductsController < ApplicationController
   # POST /products.json
   def create
     @product = Product.new(params[:product])
+    @product.user = current_user
 
     respond_to do |format|
       if @product.save
@@ -106,5 +104,6 @@ protected
     @categories = Category.all
     @marks = Mark.all
   end
+  
 
 end

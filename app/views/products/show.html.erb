@@ -19,6 +19,9 @@
         <span class="link-voltar">
           <%= link_to 'Editar', edit_product_path(@product) %>
         </span>
+        <span class="link-voltar">
+          <%= link_to 'Excluir', @product, confirm: 'Deseja excluir esse produto?', method: :delete %>
+        </span>
       <% end %>
   <% end %>
 </div>

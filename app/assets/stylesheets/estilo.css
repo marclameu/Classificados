@@ -175,6 +175,10 @@ body {
     
 }
 
+.cadastrar-produto{
+	margin: 0 0 0 50px;
+}
+
 .items-grid li{
    display: inline;   
 }

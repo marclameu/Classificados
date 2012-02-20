@@ -20,19 +20,19 @@
     <%= f.text_area :description %>
   </div>
   <div class="field">
-    <%= f.label :price %><br />
+    <%= f.label :Preço %><br />
     <%= f.text_field :price %>
   </div>
   <div class="field">
-    <%= f.label :category %><br />
+    <%= f.label :Categoria %><br />
     <%= f.collection_select :category_id, @categories, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :mark %><br />
+    <%= f.label :Marca %><br />
     <%= f.collection_select :mark_id, @marks, :id, :name %>
   </div>
   <div class="field">
-    <%= f.label :imagem %><br />
+    <%= f.label "Imagem do produto" %><br />
     <%= f.file_field :image %>
   </div>
   <div class="actions">

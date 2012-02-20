@@ -2,7 +2,7 @@ Classificados::Application.routes.draw do
 
   get "users/admin"
 
-  get "user/admin"
+  get "users/meus_produtos"
 
   devise_for :users, :controllers => {:sessions => 'sessions'}
 
