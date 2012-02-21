@@ -13,7 +13,6 @@ $(document).ready(function() {
     //alert('');
     //"<%=escape_javascript($link_atual = 'home' )%>";
   });
-
 });
 
 

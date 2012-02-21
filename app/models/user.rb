@@ -1,5 +1,8 @@
 class User < ActiveRecord::Base
   has_many :products
+  validates_presence_of :name, :message => "campo de preenchimento obrigatorio!" 
+  validates_presence_of :phone, :message => "campo de preenchimento obrigatorio!" 
+  
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :trackable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

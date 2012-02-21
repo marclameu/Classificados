@@ -1,6 +1,7 @@
 
 
-.login-title {margin: 0 0 0 460px}
+.login-title {margin: 0 0 0 460px;}
+.login-title-new {margin: 0 0 0 40px;}
 
 a.link-acesso{ background-image: url("acesso.gif");				  
 			  margin: -220px 350px 0 0;
@@ -21,7 +22,7 @@ legend				{ display: none; }
 
 .email-field			{ border: 0; }
 
-.email-label				{ width: 115px; text-align: right; float: left; margin: 0 10px 0 0; padding: 9px 0 0 0; font-size: 16px; }
+.email-label	{ width: 115px; text-align: right; float: left; margin: 10px 10px 0 0; padding: 9px 0 0 0; font-size: 16px; }
 
 #user_password, #user_email, #user_password_confirmation, .general_txt				{ width: 220px; display: block; padding: 4px; margin: 0 0 10px 0; font-size: 18px;
 					  color: #3a3a3a; font-family: Georgia, serif;}
@@ -29,5 +30,10 @@ input[type=checkbox]{ width: 20px; margin: 0; display: inline-block; }
 					  
 .button				{ background: url(images/button-bg.png) repeat-x top center; border: 1px solid #999;
 					  -moz-border-radius: 5px; padding: 5px; color: black; font-weight: bold;
-					  -webkit-border-radius: 5px; font-size: 13px;  width: 100px; }
+					  -webkit-border-radius: 5px; font-size: 13px;  width: 100px;  margin:30px 0 0 90px;}
 .button:hover		{ background: white; color: black; }
+
+.form-registration{
+	float:left;
+	margin:0 0 0 0;
+}

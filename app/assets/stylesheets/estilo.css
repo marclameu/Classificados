@@ -203,7 +203,20 @@ body {
     margin: 0 0 0 60px;
     text-align: left;
 }
-
+.item-show{
+    font:15px Arial, Verdana, tahoma;    
+    width: 1300px;
+    min-height: 150px;
+    padding: 0 0 0 0;
+    float: left;
+    margin: 0 0 0 60px;
+    text-align: left;
+}
+.product-description-box{
+  float:left;
+  max-width:1000;
+  margin:20px 0 0 30px;
+}
 .product-image{
     float: left;
     min-height: 110px;

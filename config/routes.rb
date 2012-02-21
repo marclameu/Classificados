@@ -8,6 +8,7 @@ Classificados::Application.routes.draw do
 
   match 'products/search' => 'products#search'
   
+  
 #  get "products/filter/:id" => "products#index", :as => :product
   
   resources :products
