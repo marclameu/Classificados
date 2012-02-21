@@ -1,6 +1,15 @@
+<%if @product != nil%>
+<div class="cadastrar-produto">
 <h1>Editing product</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @product %> |
-<span class="link-voltar"> <a HREF="javascript:history.back()">Voltar</a> </span>
+</div>
+<%= link_to 'Exibir', @product %> |
+<%else%>
+  <%= h flash[:notice]%>
+  <br/><br/>
+<%end%>
+<span class="link-voltar"> <a HREF="javascript:history.back()">Cancelar</a> </span>
+<br/>
+<br/>

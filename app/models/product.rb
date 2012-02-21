@@ -7,9 +7,13 @@ class Product < ActiveRecord::Base
 
   default_scope order('price ASC')
   
-  scope :filter_by_category, lambda {|category_name| Product.joins(:category).where("categories.name = ?",[category_name])
+  scope :filter_by_category, lambda {|category_name| 
+    Product.joins(:category).where("categories.name = ?",[category_name])
    }
-
+   
+  scope :find_with_user, lambda {|id, user_id|
+    Product.where("id = ? and user_id = ?", [id], [user_id])
+  }
   #scope :filter, lambda { |low, high| where(:price => low..high) }
   #def self.filter(low, high)
   #  if ($link_atual == 'home')

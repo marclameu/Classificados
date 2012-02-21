@@ -50,7 +50,14 @@ class ProductsController < ApplicationController
 
   # GET /products/1/edit
   def edit
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
+    @product = Product.find_with_user(params[:id], current_user.id)
+    if @product.any?
+      @product = @product.first
+    else
+      @product = nil
+      flash[:notice] = "Produto inexistente ou usuario sem permissao para edicao!"
+    end
   end
 
   # POST /products
@@ -73,7 +80,8 @@ class ProductsController < ApplicationController
   # PUT /products/1
   # PUT /products/1.json
   def update
-    @product = Product.find(params[:id])
+    #@product = Product.find(params[:id])
+    @product = find_with_user(params[:id], current_user.id)
 
     respond_to do |format|
       if @product.update_attributes(params[:product])
@@ -89,12 +97,18 @@ class ProductsController < ApplicationController
   # DELETE /products/1
   # DELETE /products/1.json
   def destroy
-    @product = Product.find(params[:id])
-    @product.destroy
+    #@product = Product.find(params[:id])
+    @product = find_with_user(params[:id], current_user.id)
+    if @product.any?
+      @product = @product.first
+      @product.destroy
 
-    respond_to do |format|
-      format.html { redirect_to products_url }
-      format.json { head :ok }
+      respond_to do |format|
+        format.html { redirect_to products_url }
+        format.json { head :ok }
+      end
+    else
+      flash[:notice] = "Produto inexistente ou usuario sem permissao para edicao!"
     end
   end
 
