@@ -1,0 +1,36 @@
+<h1>Meus Produtos</h1>
+<% if @my_products.present?%>
+	<div class="paginacao">
+	  <div class="flickr_pagination">
+	      <%= will_paginate @my_products , {:previous_label => "<- Anterior", :next_label => "Próximo ->"}%>
+	  </div>
+	</div>
+	<ul class ="items-grid">
+	<% @my_products.each do |p|%>
+      <li>
+      	<div class="item">
+	       <span class="product-image">
+              <%= link_to (image_tag p.image.url(:thumb)), p %>
+           </span>
+		   	<span class="product-name-box">
+            <%=  p.name %>
+           </span>
+		</div>
+      </li>
+	<%end%>	
+	</ul>
+	<div class="paginacao">
+	  <div class="flickr_pagination">
+	      <%= will_paginate @my_products , {:previous_label => "<- Anterior", :next_label => "Próximo ->"}%>
+	  </div>
+	</div>
+	<br/>
+<%if flash[:notice]%>
+  <%= h flash[:notice]%>
+<%end%>
+<%end%>
+<br/
+<div class = "link-novo-produto">
+	<%= link_to "Novo produto", new_product_path%>
+</div>
+<br/>
